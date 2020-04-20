@@ -34,12 +34,14 @@ public class Main3Activity extends AppCompatActivity {
     private static final String THINGSPEAK_FIELD2 = "field2";
     private static final String THINGSPEAK_FIELD3 = "field3";
     private static final String THINGSPEAK_FIELD4 = "field4";
+    private static final String THINGSPEAK_FIELD5 = "field5";
+
     private static final String THINGSPEAK_UPDATE_URL = "https://api.thingspeak.com/update?";
     private static final String THINGSPEAK_CHANNEL_URL = "https://api.thingspeak.com/channels/";
     private static final String THINGSPEAK_FEEDS_LAST = "/feeds/last?";
 
     ImageButton b1;
-    TextView t5,t6,t7,t8;
+    TextView t5,t6,t7,t8,t9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,8 @@ public class Main3Activity extends AppCompatActivity {
         t6=findViewById(R.id.textView6);
         t7=findViewById(R.id.textView7);
         t8=findViewById(R.id.textView8);
+        t9=findViewById(R.id.textView11);
+        new FetchThingSpeakTask().execute();
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,10 +123,15 @@ public class Main3Activity extends AppCompatActivity {
                 System.out.println(v4);
                 String val4=new Double(v4).toString();
 
+                double v5 = channel.getDouble(THINGSPEAK_FIELD5);
+                System.out.println(v5);
+                String val5=new Double(v5).toString();
+
                 t5.setText(val1);
                 t6.setText(val2);
                 t7.setText(val3);
                 t8.setText(val4);
+                t9.setText(val5);
 
 //                if(v1>=90)
 //                    t1.setText("HI ALL  ");
