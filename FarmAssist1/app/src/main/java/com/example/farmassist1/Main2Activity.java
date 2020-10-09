@@ -9,26 +9,27 @@ import android.widget.Button;
 
 public class Main2Activity extends AppCompatActivity {
 
-    public Button b1,b2;
+    public Button b1, b2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        b1=findViewById(R.id.button);
+        b1 = findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(Main2Activity.this,Main3Activity.class);
+                Intent i = new Intent(Main2Activity.this, Main3Activity.class);
                 startActivity(i);
             }
         });
 
-        b2=findViewById(R.id.button4);
+        b2 = findViewById(R.id.button50);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(Main2Activity.this,weather.class);
+                Intent i = new Intent(Main2Activity.this, weather.class);
                 startActivity(i);
             }
         });

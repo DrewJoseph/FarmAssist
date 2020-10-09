@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.041" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button50"
         android:layout_width="150dp"
         android:layout_height="57dp"
         android:text="Weather Updates"
